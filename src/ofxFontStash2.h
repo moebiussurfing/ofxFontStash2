@@ -9,6 +9,8 @@
 #pragma once
 #include "ofMain.h"
 
+#define NANOVG_GL2_IMPLEMENTATION
+
 #include "ofxFontStashParser.h"
 #include "ofxFontStashStyle.h"
 

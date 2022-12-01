@@ -1,6 +1,4 @@
-ofxRemoteUI
-ofxOsc
-ofxXmlSettings
-ofxPoco
-ofxTimeMeasurements
 ofxFontStash2
+ofxOsc
+ofxPoco
+ofxXmlSettings

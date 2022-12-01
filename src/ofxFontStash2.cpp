@@ -78,7 +78,7 @@ void Fonts::setup(bool debug){
 
 	#ifdef NANOVG_GL3_IMPLEMENTATION
 	ctx = ofxfs2_nvgCreateGL23(/*NVG_ANTIALIAS | */(stencilStrokes?NVG_STENCIL_STROKES:0) | (debug?NVG_DEBUG:0));
-	#elif NANOVG_GL2_IMPLEMENTATION
+	#elif defined NANOVG_GL2_IMPLEMENTATION
 	ctx = ofxfs2_nvgCreateGL22(/*NVG_ANTIALIAS | */(stencilStrokes?NVG_STENCIL_STROKES:0) | (debug?NVG_DEBUG:0));
 	#elif defined NANOVG_GLES2_IMPLEMENTATION
 	ctx = ofxfs2_nvgCreateGL2ES2(/*NVG_ANTIALIAS | */(stencilStrokes?NVG_STENCIL_STROKES:0) | (debug?NVG_DEBUG:0));

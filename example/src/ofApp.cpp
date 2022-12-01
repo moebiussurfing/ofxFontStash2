@@ -4,16 +4,17 @@
 void ofApp::setup(){
 
 	ofBackground(22);
-	TIME_SAMPLE_ENABLE();
-	TIME_SAMPLE_SET_AVERAGE_RATE(0.1);
-	TIME_SAMPLE_SET_DRAW_LOCATION(TIME_SAMPLE_DRAW_LOC_BOTTOM_RIGHT);
-	TIME_SAMPLE_SET_PRECISION(4);
-	//TIME_SAMPLE_GET_INSTANCE()->drawUiWithFontStash2("fonts/VeraMono.ttf");
+    
+//	TIME_SAMPLE_ENABLE();
+//	TIME_SAMPLE_SET_AVERAGE_RATE(0.1);
+//	TIME_SAMPLE_SET_DRAW_LOCATION(TIME_SAMPLE_DRAW_LOC_BOTTOM_RIGHT);
+//	TIME_SAMPLE_SET_PRECISION(4);
+//	//TIME_SAMPLE_GET_INSTANCE()->drawUiWithFontStash2("fonts/VeraMono.ttf");
 
-	RUI_SETUP();
-	RUI_SHARE_PARAM(debug);
-	RUI_SHARE_PARAM(columnVariationSpeed, 0 , 2);
-	//RUI_GET_INSTANCE()->drawUiWithFontStash2("fonts/VeraMono-Bold.ttf");
+//	RUI_SETUP();
+//	RUI_SHARE_PARAM(debug);
+//	RUI_SHARE_PARAM(columnVariationSpeed, 0 , 2);
+//	//RUI_GET_INSTANCE()->drawUiWithFontStash2("fonts/VeraMono-Bold.ttf");
 
 	bool debugNanoVG = true;
 	fonts.setup(debugNanoVG);
@@ -70,75 +71,75 @@ void ofApp::draw(){
 	float xx = 40;
 	float yy = 40;
 	ofScale(0.9, 0.9);
-	TSGL_START("d");
+//	TSGL_START("d");
 
 	int id = 0;
 	string tMsg = ofToString(id) + " testDraw()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	testDraw(xx,yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 	yy += 100; id++;
 
 	tMsg = ofToString(id) + " testDrawBatch()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	testDrawBatch(xx,yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 	yy += 45; id++;
 
 	tMsg = ofToString(id) + " testDrawColumn()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	yy += testDrawColumn(xx,yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 	yy += 20; id++;
 
 	tMsg = ofToString(id) + " testDrawColumnNVG()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	yy += testDrawColumnNVG(xx,yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 	yy += 20; id++;
 
 	tMsg = ofToString(id) + " testDrawTabs()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	testDrawTabs(xx, yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 
 	id++;
 	yy = 40;
 	xx = 600;
 	tMsg = ofToString(id) + " testDrawFormatted()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	testDrawFormatted(xx, yy);
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 	yy += 60; id++;
 
 	tMsg = ofToString(id) + " testDrawFormattedColumn()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	yy += testDrawFormattedColumn(xx, yy); id++;
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 
 
 	yy += 60;
 	tMsg = ofToString(id) + " testDiyPlainLayout()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	yy += testDiyPlainLayout(xx, yy); id++;
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 
 	yy += 60;
 	tMsg = ofToString(id) + " testDiyFormattedLayout()";
-	TS_START(tMsg);
+//	TS_START(tMsg);
 	drawID(id, xx, yy);
 	yy += testDiyFormattedLayout(xx, yy); id++;
-	TS_STOP(tMsg);
+//	TS_STOP(tMsg);
 
-	TSGL_STOP("d");
+//	TSGL_STOP("d");
 
 	#ifdef TEST_OFX_NANOVG_COMPAT
 	ofxNanoVG::one().beginFrame(ofGetWidth(), ofGetHeight(), 1.0);
@@ -317,13 +318,13 @@ float ofApp::testDiyFormattedLayout(float x, float y){
 
 	//we only want to draw whatever fits in 2 lines
 	int numLines = 2;
-	TS_START_NIF("layout formatted");
+//	TS_START_NIF("layout formatted");
 	vector<ofxFontStash2::StyledLine> laidOutLines;
 	fonts.layoutLines(parsed, colW, laidOutLines, align, numLines);
-	TS_STOP_NIF("layout formatted");
-	TS_START_NIF("draw formatted");
+//	TS_STOP_NIF("layout formatted");
+//	TS_START_NIF("draw formatted");
 	ofRectangle bbox = fonts.drawLines(laidOutLines, x, y);
-	TS_STOP_NIF("draw formatted");
+//	TS_STOP_NIF("draw formatted");
 	ofSetColor(255,16);
 	ofDrawRectangle(bbox);
 	drawInsertionPoint(x,y,100);
@@ -352,7 +353,7 @@ void ofApp::keyPressed(int key){
 
 	if(key == 'd'){
 		debug ^= true;
-		RUI_PUSH_TO_CLIENT();
+//		RUI_PUSH_TO_CLIENT();
 	}
 }
 

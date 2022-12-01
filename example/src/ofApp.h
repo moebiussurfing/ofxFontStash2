@@ -8,8 +8,8 @@
 #endif
 
 #include "ofMain.h"
-#include "ofxTimeMeasurements.h"
-#include "ofxRemoteUIServer.h"
+//#include "ofxTimeMeasurements.h"
+//#include "ofxRemoteUIServer.h"
 #include "ofxFontStash2.h"
 
 class ofApp : public ofBaseApp{
